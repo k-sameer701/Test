@@ -1,6 +1,9 @@
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.jetbrains.kotlin.android)
+
+    alias(libs.plugins.jetbrains.kotlin.serialization)
+    id("kotlin-parcelize") // needed only for non-primitive classes
 }
 
 android {
@@ -74,7 +77,12 @@ dependencies {
     val media3_version = "1.4.0"
 
     // For media playback using ExoPlayer
-    implementation("androidx.media3:media3-exoplayer:$media3_version")
+    implementation(libs.androidx.media3.exoplayer)
     // For building media playback UIs
-    implementation("androidx.media3:media3-ui:$media3_version")
+    implementation(libs.androidx.media3.ui)
+
+    implementation(libs.androidx.navigation.compose)
+
+    implementation(libs.androidx.navigation.compose)
+    implementation(libs.kotlinx.serialization.json)
 }
