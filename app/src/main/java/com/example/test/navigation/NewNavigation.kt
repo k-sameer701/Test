@@ -30,20 +30,13 @@ class NewNavigation: ComponentActivity() {
                 composable<Routes.FirstScreen> { // custom type as generic
                     FirstScreen(onNavigateForward = {
                         // passing object for seconds class
-                        navController.navigate(
-                            Routes.SecondScreen(customPrimitive = "Custom primitive string")
-                        )
-                    })
+                        navController.navigate(Routes.SecondScreen(customPrimitive = "Custom primitive string")) })
                 }
                 composable<Routes.SecondScreen> {backstackEntry ->
                     // unpacking the back stack entry to obtain our value
                     val customValue = backstackEntry.toRoute<Routes.SecondScreen>()
                     Log.i("SecondScreen", customValue.customPrimitive)
-                    SecondScreen(onNavigateBack = {
-                        navController.navigate(
-                            Routes.FirstScreen
-                        )
-                    })
+                    SecondScreen(onNavigateBack = { navController.navigate(Routes.FirstScreen) })
                 }
             }
         }
