@@ -24,7 +24,7 @@ import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
 
 @Composable
-fun ListScreen(navController: NavController,) {
+fun ListScreen(navController: NavController) {
     val myUser = listOf(
         User(1, "Naruto", 14, "Male"),
         User(2, "TenTen", 15, "Female"),
